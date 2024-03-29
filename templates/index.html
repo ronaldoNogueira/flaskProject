@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Legislator Votes</h2>
+<table>
+    <tr>
+        <th>Legislator ID</th>
+        <th>Legislator Name</th>
+        <th>Yes Votes</th>
+        <th>No Votes</th>
+    </tr>
+    {% for item in listFinal %}
+    <tr>
+        <td>{{ item.legislator_id }}</td>
+        <td>{{ item.legislator_name }}</td>
+        <td>{{ item.yes_votes }}</td>
+        <td>{{ item.no_votes }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>Bill Votes</h2>
+<table>
+    <tr>
+        <th>Bill ID</th>
+        <th>Bill Title</th>
+        <th>Bill Sponsor</th>
+        <th>Support</th>
+        <th>Oppose</th>
+        <th>Legislator Name</th>
+        <th>Legislator ID</th>
+    </tr>
+    {% for item in listFinal2 %}
+    <tr>
+        <td>{{ item.bill_id }}</td>
+        <td>{{ item.bill_title }}</td>
+        <td>{{ item.bill_sponsor }}</td>
+        <td>{{ item.support }}</td>
+        <td>{{ item.oppose }}</td>
+        <td>{{ item.legislator_name }}</td>
+        <td>{{ item.legislator_id }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
